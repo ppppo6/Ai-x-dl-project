@@ -77,7 +77,13 @@ RNN은 순서가 있는 데이터를 처리하는데 강점을 보입니다. (ex
 Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self Attention
 따라서 Transformer는 병렬 처리가 가능하고 데이터가 많을수록 효과적입니다.
 
-{비교를 진행할 때 Epoch나 Batch Size, Train/Test 비율 같은 것들은 모두 동일하게 진행할 예정입니다}
+{공정한 비교를 하기 위해서 딥러닝 모델을 제외하고 Epoch나 Batch Size, Train/Test 비율 같은 것들은 모두 동일하게 진행할 예정입니다}
+
+---
+
+### 사용할 DL 라이브러리 : PyTorch
+
+{PyTorch에 관한 설명 추가할 예정입니다}
 
  
 {더욱 자세한 설명을 추가할 예정입니다}
