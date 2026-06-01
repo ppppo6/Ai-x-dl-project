@@ -34,7 +34,9 @@ Members:
 
 ## II. Datasets
 
-사용한 데이터셋) Solar Radiation Prediction  (https://www.kaggle.com/datasets/dronio/SolarEnergy)  !!임시로 사용!!
+사용한 데이터셋) Solar Radiation Prediction  
+ㅎㅇ
+
 
 
 
@@ -56,6 +58,7 @@ print('hello world')
 ## V. Related Work (e.g., existing studies)
 
 사용한 데이터셋
+
 (https://www.kaggle.com/datasets/dronio/SolarEnergy)
 
 ---
