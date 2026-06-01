@@ -15,4 +15,24 @@ Members:
 
 ---
 
-## I. Proposal
+## I. Proposal (Option A)
+
+---
+
+## II. Datasets
+
+---
+
+## III. Methodology
+
+---
+
+## IV. Evaluation & Analysis
+
+---
+
+## V. Related Work (e.g., existing studies)
+
+---
+
+## VI. Conclusion: Discussion
