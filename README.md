@@ -54,17 +54,23 @@ Members:
 
 ## III. Methodology
 
-### **RNN** 
-(순환 신경망) RNN은 일반 신경망(MLP)과 달리 이전 출력을 다시 입력에 넣는 순환 구조를 가집니다.  
+### **RNN** (순환 신경망) 
+ RNN은 일반 신경망(MLP)과 달리 이전 출력을 다시 입력에 넣는 순환 구조를 가집니다.  
 RNN은 순서가 있는 데이터를 처리하는데 강점을 보입니다. (ex. 시계열 데이터) 또한 RNN의 학습속도가 빠르다는 장점도 있습니다.
 하지만 RNN은 치명적인 문제들이 있는데 그 중에 하나는 순서가 긴 데이터에선 앞부분 기억을 까먹는 문제가 있다는 것입니다.  
 이것을 기울기 소실 문제 (Vanishing Gradient) 라고 부릅니다.
 
                                                                                           
-**LSTM** (Long short-term memory) : LSTM은 발전된 RNN 기법중 하나에 속합니다.
-cell state와 forget gate, input gate, output gate를 추가하여 기존 RNN의 Vanishing Gradient 문제를 해결함
+### **LSTM** (Long short-term memory) 
+ LSTM은 발전된 RNN 기법중 하나에 속합니다.  
+기존의 RNN에 Cell State와 Forget Gate, Input Gate, Output Gate를 추가하여 기존 RNN의 기울기 소실 문제를 해결하였습니다.
 
+### **Transformer** 
+ Transformer는 앞의 2개의 모델에 비해 비교적 최근에 나왔습니다.  
+Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self Attention
 
+ 
+{더욱 자세한 설명을 추가할 예정입니다}
 ---
 
 ## IV. Evaluation & Analysis
