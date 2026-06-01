@@ -5,13 +5,13 @@ AI+X 딥러닝 프로젝트
 
 Members:
 
-한민채 ()
+한민채 (경영학과) gksalsc00@hanyang.ac.kr
 
-양희지 ()
+양희지 (전기공학전공) yangheeji0920@gmail.com
 
-전석호 ()
+전석호 (정치외교학과) jseokho31@naver.com
 
-김도윤 (데이터사이언스학부, 2026001203) doyun0337@naver.com
+김도윤 (데이터사이언스학부) doyun0337@naver.com
 
 ---
 
