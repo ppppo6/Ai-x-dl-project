@@ -34,12 +34,12 @@ Members:
 
 ## II. Datasets
 
-사용한 데이터셋) **Solar Radiation Prediction**  (Kaggle에서 찾음)
+ 사용한 데이터셋) **Solar Radiation Prediction**  (Kaggle에서 찾음)
 이 데이터셋은 NASA의 해커톤에서 제공되었으며, 미국 하와이의 HI-SEAS 기상 관측소에 수집된 기상 데이터입니다.  
 또한 이 데이터셋은 단일 지점에서 시간 순서대로 기록된 시계열 데이터셋입니다.  
 
 
-컬럼에는 UNIXTime, Data, Time, Radiation, Temperature, Pressure, Humidity, WindDirection(Degrees), Speed, TimeSunrise, TimeSunset 이 있으며  
+ 컬럼에는 UNIXTime, Data, Time, Radiation, Temperature, Pressure, Humidity, WindDirection(Degrees), Speed, TimeSunrise, TimeSunset 이 있으며  
 이 중에 저희가 사용할 컬럼들은 Temperature (기온), Humidity (습도), Pressure (기압), Speed (풍속) 입니다. 
 
 ---
@@ -54,7 +54,7 @@ Members:
 
 ## III. Methodology
 
-저희가 사용할 모델은 RNN, LSTM, Transformer 입니다.  
+ 저희가 사용할 모델은 RNN, LSTM, Transformer 입니다.  
 태양 일사량은 시간 순서에 따라 변화하는 시계열 데이터이므로, 순서가 있는 데이터 처리에 특화된 시퀀스 모델 3가지를 선택하여 비교 분석할 예정입니다.
 
 ### **RNN** (순환 신경망)  
@@ -79,6 +79,8 @@ Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self
 
 {공정한 비교를 하기 위해서 딥러닝 모델을 제외하고 Epoch나 Batch Size, Train/Test 비율 같은 것들은 모두 동일하게 진행할 예정입니다}
 
+{더욱 자세한 설명을 추가할 예정입니다}
+
 ---
 
 ### 사용할 DL 라이브러리 : PyTorch
@@ -86,7 +88,6 @@ Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self
 {PyTorch에 관한 설명 추가할 예정입니다}
 
  
-{더욱 자세한 설명을 추가할 예정입니다}
 
 ---
 
