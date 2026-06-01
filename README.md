@@ -1,5 +1,5 @@
 # 태양광 발전량 예측
-AI+X 딥러닝 프로젝트
+AI+X 딥러닝 프로젝트 (G28)
 
 ---
 
@@ -28,17 +28,24 @@ Members:
 
 ## I. Proposal (Option A)
 
+태양
+
 ---
 
 ## II. Datasets
 
-```python
-print('hello world')
-```
+사용한 데이터셋) Solar Radiation Prediction  (https://www.kaggle.com/datasets/dronio/SolarEnergy)  !!임시로 사용!!
+
+
+
 
 ---
 
 ## III. Methodology
+
+```python
+print('hello world')
+```
 
 ---
 
@@ -47,6 +54,9 @@ print('hello world')
 ---
 
 ## V. Related Work (e.g., existing studies)
+
+사용한 데이터셋
+(https://www.kaggle.com/datasets/dronio/SolarEnergy)
 
 ---
 
