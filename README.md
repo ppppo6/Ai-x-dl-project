@@ -54,6 +54,9 @@ Members:
 
 ## III. Methodology
 
+저희가 사용할 모델은 RNN, LSTM, Transformer 입니다.  
+태양 일사량은 시간 순서에 따라 변화하는 시계열 데이터이므로, 순서가 있는 데이터 처리에 특화된 시퀀스 모델 3가지를 선택하여 비교 분석할 예정입니다.
+
 ### **RNN** (순환 신경망)  
 
  RNN은 일반 신경망(MLP)과 달리 이전 출력을 다시 입력에 넣는 순환 구조를 가집니다.  
@@ -66,14 +69,17 @@ RNN은 순서가 있는 데이터를 처리하는데 강점을 보입니다. (ex
 
  LSTM은 발전된 RNN 기법중 하나에 속합니다.  
 기존의 RNN에 Cell State와 Forget Gate, Input Gate, Output Gate를 추가하여 기존 RNN의 기울기 소실 문제를 해결하였습니다.
+따라서 LSTM은 장기적인 패턴을 학습할 수 있다는 장점이 존재합니다.
 
 ### **Transformer**  
 
  Transformer는 앞의 2개의 모델에 비해 비교적 최근에 나왔습니다.  
 Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self Attention
+따라서 Transformer는 병렬 처리가 가능하고 데이터가 많을수록 효과적입니다.
 
  
 {더욱 자세한 설명을 추가할 예정입니다}
+
 ---
 
 ## IV. Evaluation & Analysis
