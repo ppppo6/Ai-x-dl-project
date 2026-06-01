@@ -96,6 +96,11 @@ Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self
 ```python
 print('Work-In-Process')
 ```
+### !!임시 - Blog_In_Progress 제출용!! LLM을 이용해 간단히 코드를 짜서 Transformer를 이용해 그래프 도출해봄
+<img width="1925" height="1441" alt="image" src="https://github.com/user-attachments/assets/814eed5a-ff2f-4bc5-bfdf-1e6111902568" />
+
+
+{평가 지표 : MAE, RMSE, R^2 ??}
 
 ---
 
