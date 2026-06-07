@@ -894,7 +894,7 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 <img width="940" height="380" alt="image" src="https://github.com/user-attachments/assets/bf2a7f58-3215-4c21-8ba8-d51bd704c969" />
 
-<img width="940" height="470" alt="image" src="https://github.com/user-attachments/assets/ad9685b2-8838-4598-aaa6-b192d3ff5fa0" />
+<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/ad9685b2-8838-4598-aaa6-b192d3ff5fa0" />
 
 
 
