@@ -962,16 +962,16 @@ out, _ = self.lstm(x)
 
 Transformer도 RNN, LSTM이랑 굉장히 유사한 구조로 코딩을 할 수 있습니다. 하지만 변경을 해야하는 부분이 몇 가지 있습니다. 왜냐하면 기존의 RNN, LSTM은 데이터를 순서대로 하나씩 읽지만, Transformer는 시퀀스 데이터 전체를 한번에 본다는 특징(Self-Attention)을 지닙니다. 이러한 이유 때문에 몇 가지 변경점들이 생깁니다.
 
-1. Input Projection 추가하기
+**1. Input Projection 추가하기**
 
 `self.input_projection = nn.Linear(6, 64)` : 입력 변수 6개를 64차원으로 확장하는 과정입니다. (Self-Attention에 맞는 차원으로 변환하는 과정입니다.)
 
-2. Positional Encoding 추가하기
+**2. Positional Encoding 추가하기**
 
 `self.pos_encoding = nn.Parameter(torch.randn(1, 168, 64))` : 순서 정보를 직접 넣어주는 과정입니다. (Transformer는 전체를 한꺼번에 보기 때문에
 순서 정보가 자동으로 반영되지 않습니다. 따라서 직접 순서 정보를 넣어줘야 합니다.)
 
-3. 모델 변경하기
+**3. 모델 변경하기**
 
 `self.transformer = nn.TransformerEncoder(...)` : LSTM 코딩 파트에서 했던거와 유사하게 nn.RNN 이나 nn.LSTM 을 nn.TRansformerEncoder 로 변경해주는 과정입니다.
 
