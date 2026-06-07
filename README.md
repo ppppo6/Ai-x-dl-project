@@ -323,6 +323,9 @@ print(f"X shape: {X_seq.shape}  → (샘플수, {WINDOW_SIZE}개, {len(feature_c
 print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ```
+---
+
+[데이터셋 다운로드](https://www.kaggle.com/datasets/ppppo6/dataset-proj)
 
 ---
 
