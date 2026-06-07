@@ -116,6 +116,54 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
  ## 데이터 전처리 과정 ##
 
+ ### 1. 발전량 데이터 (PV.Generation)
+
+ #### 1-1. 파일 병합시키기
+
+ 원본 데이터파일인 '2017' 파일은 원래 1년(365일)치의 데이터가 한번에 모아져 있는게 아니였다. 2017 폴더 안에는 달에 맞춰 01부터 12까지 12개의 하위 폴더들이 있었고, 또 그 안에는 날짜별 csv 파일이 있었다.
+
+따라서 우선적으로 이 365개의 파일들을 하나로 병합할 필요가 있었다.
+
+ 그 안에는 1일치의 파일이 365개 있었다.
+따라서 그 365개의 csv 파일들을 하나로 합치는 작업을 먼저 수행했다.
+
+ 또한 파일을 하나로 합칠 때, 실제 사용할 발전량 컬럼을 제외한 나머지 컬럼들은 삭제시켰다.
+
+ ```python
+import pandas as pd
+import glob
+import os
+
+# 경로 설정
+data_folder = 'C:/Users/doyun/OneDrive/Desktop/Proj/raw_data/2017'  # 2017 폴더 경로
+output_file = 'C:/Users/doyun/OneDrive/Desktop/Proj/data_preprocessing/PV.generation/merge_PV.generation/2017_PV.generation_merged.csv' #저장 경로
+
+# 파일 찾기
+all_files = sorted(glob.glob(os.path.join(data_folder, '**/*.csv'), recursive=True))
+print(f"총 {len(all_files)}개 파일 발견")
+
+# 합치기
+df_list = []
+for i, file in enumerate(all_files):
+    try:
+        df = pd.read_csv(file)
+        df = df[['TIMESTAMP', 'InvPAC_kW_Avg']].copy()
+        df_list.append(df)
+        if (i+1) % 50 == 0:
+            print(f"{i+1}/{len(all_files)} 완료...")
+    except Exception as e:
+        print(f"⚠️ {os.path.basename(file)} 오류: {e}")
+
+# 저장
+combined = pd.concat(df_list, ignore_index=True)
+combined.columns = ['timestamp', 'power_kW']
+combined = combined.sort_values('timestamp').reset_index(drop=True)
+combined.to_csv(output_file, index=False)
+
+print(f"\n✅ 완료! 총 {len(combined):,}행")
+print(f"저장 위치: {output_file}")
+```
+
 ---
 
 # IV. Evaluation & Analysis
