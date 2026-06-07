@@ -198,23 +198,41 @@ print(f"리샘플링 완료: {len(df_30min):,}행 (30분 단위)")
 
 ```
 
+
+ ## 2. 기상 상황 데이터 (Weather_Data)
+
+ ```python
+
+"""코드 일부분"""
+
+# ============================================================
+# Step 2: 시간 컬럼 생성
+# ============================================================
+print("\nStep 2: 시간 컬럼 생성 중...")
+df['timestamp'] = pd.to_datetime(
+    df['Year'].astype(str) + '-' +
+    df['Month'].astype(str).str.zfill(2) + '-' +
+    df['Day'].astype(str).str.zfill(2) + ' ' +
+    df['Hour'].astype(str).str.zfill(2) + ':' +
+    df['Minute'].astype(str).str.zfill(2)
+)
+print(f"시간 컬럼 생성 완료: {df['timestamp'].iloc[0]}")
+
+# 기존 시간 컬럼 제거
+df = df.drop(columns=['Year', 'Month', 'Day', 'Hour', 'Minute'])
+print("기존 시간 컬럼 제거 완료")
+
+```
+
 ---
-
-
-
-
 
 ---
 
 # IV. Methodology
 
-
+---
 
 # V. Evaluation & Analysis
-
-```python
-print('test hello world')
-```
 
 ---
 
