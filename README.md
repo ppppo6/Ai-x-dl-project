@@ -812,7 +812,81 @@ r2   = r2_score(actual, predicted)
 
 #### STEP 5. 결과 그래프 그리기
 
-----
+```python
+
+# ============================================================
+# Step 5: 결과 그래프
+# ============================================================
+print("\nStep 5: 그래프 생성 중...")
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+fig.suptitle(f'Solar Power Prediction - RNN\nMAE={mae:.4f} | RMSE={rmse:.4f} | R²={r2:.4f}', fontsize=13)
+
+# 실제 vs 예측
+axes[0].plot(actual[:300],    label='Actual',    color='#2196F3', linewidth=1)
+axes[0].plot(predicted[:300], label='Predicted', color='#F44336', linewidth=1, linestyle='--')
+axes[0].set_title('Actual vs Predicted (First 300)')
+axes[0].set_xlabel('Time Step')
+axes[0].set_ylabel('Power (kW)')
+axes[0].legend()
+axes[0].grid(True, alpha=0.3)
+
+# Train/Test Loss
+axes[1].plot(train_losses, label='Train Loss', color='#2196F3')
+axes[1].plot(test_losses,  label='Test Loss',  color='#F44336')
+axes[1].set_title('Loss Curve')
+axes[1].set_xlabel('Epoch')
+axes[1].set_ylabel('Loss (MSE)')
+axes[1].legend()
+axes[1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig(f'{output_dir}/rnn_result.png', dpi=150, bbox_inches='tight')
+plt.show()
+print(f"그래프 저장 완료: {output_dir}/rnn_result.png")
+
+```
+
+**코드(그래프) 설명**
+
+`fig, axes = plt.subplots(1, 2, figsize=(14, 5))` : 그래프 2개를 가로로 배치하는 코드입니다.
+
+```python
+
+# 실제 vs 예측
+axes[0].plot(actual[:300],    label='Actual',    color='#2196F3', linewidth=1)
+axes[0].plot(predicted[:300], label='Predicted', color='#F44336', linewidth=1, linestyle='--')
+axes[0].set_title('Actual vs Predicted (First 300)')
+axes[0].set_xlabel('Time Step')
+axes[0].set_ylabel('Power (kW)')
+axes[0].legend()
+axes[0].grid(True, alpha=0.3)
+
+```
+
+왼쪽에 나올 그래프에 대한 내용입니다.
+
+실제 발전량을 파란색으로 그리고 예측 발전량을 빨간색으로 그렸습니다.
+
+또한 처음 300개의 데이터만 표시했습니다.
+
+```python
+
+# Train/Test Loss
+axes[1].plot(train_losses, label='Train Loss', color='#2196F3')
+axes[1].plot(test_losses,  label='Test Loss',  color='#F44336')
+axes[1].set_title('Loss Curve')
+axes[1].set_xlabel('Epoch')
+axes[1].set_ylabel('Loss (MSE)')
+axes[1].legend()
+axes[1].grid(True, alpha=0.3)
+
+```
+
+오른쪽에 나올 그래프에 대한 내용입니다.
+
+x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설정해 EPOCH 별로  Train Loss와 Test Loss 변화를 측정했습니다.
+
+---
 
 ### 1-3. RNN 모델 결과
 
