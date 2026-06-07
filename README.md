@@ -313,7 +313,7 @@ WINDOW_SIZE = 168  #3.5일치
 def create_sequences(X, Y, window):
     Xs, Ys = [], []
     for i in range(len(X) - window):
-        Xs.append(X[i:i+window])   # 과거 48개 기상 데이터
+        Xs.append(X[i:i+window])   # 과거 168개 기상 데이터
         Ys.append(Y[i+window])     # 다음 시점 발전량
     return np.array(Xs), np.array(Ys)
 
@@ -326,6 +326,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 ---
 
 [데이터셋 다운로드](https://www.kaggle.com/datasets/ppppo6/dataset-proj)
+각 과정에서 나온 결과 파일과 최종으로 나온 파일들을 Kaggle에 업로드하였습니다. Github에 올리려 했지만 용량이 너무 커서 올리지 못했습니다.
 
 ---
 
@@ -337,11 +338,15 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ### 1-2. RNN 모델 코딩
 
+### 1-3. RNN 모델 결과
+
 ## 2. LSTM 모델
 
 ### 2-1. LSTM 모델 설명
 
 ### 2-2. LSTM 모델 코딩
+
+### 2-3. LSTM 모델 결과
 
 ## 3. Transformer 모델
 
@@ -349,9 +354,13 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ### 3-2. Transformer 모델 코딩
 
+### 3-3. Transformer 모델 결과
+
 ---
 
 # V. Evaluation & Analysis
+
+~~시작
 
 ---
 
@@ -378,3 +387,5 @@ Transformer 모델 설명 :
 ---
 
 # VII. Conclusion: Discussion
+
+~~시작
