@@ -744,6 +744,46 @@ avg_train_loss = epoch_loss / len(train_loader)
 
 #### Step 4. 성능 평가하기
 
+```python
+
+# ============================================================
+# Step 4: 성능 평가
+# ============================================================
+print("\nStep 4: 성능 평가 중...")
+model.eval()
+with torch.no_grad():
+    predicted_scaled = model(X_test_t.to(device)).cpu().numpy()
+
+predicted = scaler_Y.inverse_transform(predicted_scaled.reshape(-1, 1))
+actual    = scaler_Y.inverse_transform(Y_test.reshape(-1, 1))
+
+mae  = mean_absolute_error(actual, predicted)
+rmse = np.sqrt(mean_squared_error(actual, predicted))
+r2   = r2_score(actual, predicted)
+
+print(f"\n{'='*40}")
+print(f"  MAE:  {mae:.4f} kW")
+print(f"  RMSE: {rmse:.4f} kW")
+print(f"  R²:   {r2:.4f}")
+print(f"{'='*40}")
+
+```
+
+**코드 설명**
+
+```python
+
+model.eval()
+with torch.no_grad():
+    predicted_scaled = model(X_test_t.to(device)).cpu().numpy()
+
+predicted = scaler_Y.inverse_transform(predicted_scaled.reshape(-1, 1))
+actual    = scaler_Y.inverse_transform(Y_test.reshape(-1, 1))
+
+```
+
+`predicted_scaled = model(X_test_t.to(device)).cpu().numpy()` : 학습을 완료한 모델로 Test 데이터를 예측하는 과정입니다. 이때 값은 0~1로 정규화되어 나옵니다.
+
 ---
 
 #### STEP 5. 결과 그래프 그리기
