@@ -380,6 +380,8 @@ NIST 사이트 (발전량 데이터) - https://pvdata.nist.gov/
 
 NSRDB 사이트 (기상 상황 데이터) - https://nsrdb.nlr.gov/data-viewer
 
+--
+
 RNN 모델 설명 :
 
 
