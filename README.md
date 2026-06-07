@@ -434,6 +434,8 @@ RNN 모델 구축에 필요한 패키지들은 torch, numpy, scikit-learn, matpl
 
 +) torch의 하위 패키지인 DataLoader, TensorDataset는 데이터를 묶을 수 있게 해주어 많은 데이터를 나눠서 처리할 수 있게 해줍니다.
 
+---
+
 #### STEP 1. 데이터 로드하기
 
 ```python
@@ -464,7 +466,12 @@ train_loader  = DataLoader(train_dataset, batch_size=64, shuffle=False)
 
 ```
 
-ㅇ
+최종 데이터 전처리 과정에서 만들었던 4개의 .npy 파일을 불러왔습니다.
+
+X_train = np.load(f'{data_dir}/X_train.npy')
+X_test  = np.load(f'{data_dir}/X_test.npy')
+Y_train = np.load(f'{data_dir}/Y_train.npy')
+Y_test  = np.load(f'{data_dir}/Y_test.npy')
 
 #### Step 2. RNN 모델 구축하기
 
