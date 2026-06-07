@@ -41,7 +41,7 @@ Members:
 
 동일한 조건 아래 RNN, LSTM, Transformer 이 3개의 시퀀스 모델을 통해 태양광 발전량을 예측하고, 각 모델의 성능을 MAE, RMSE, R²를 기준으로 비교 분석할 예정입니다.
 
-여기서 시퀀스 모델이란 순서가 있는 데이터 처리에 특화된 딥러닝 모델로, 시간 순서에 따라 변화하는 태양광 발전량 예측에 적합합다고 생각합니다.
+여기서 시퀀스 모델이란 순서가 있는 데이터 처리에 특화된 딥러닝 모델로, 시간 순서에 따라 변화하는 태양광 발전량 예측에 적합하다고 생각합니다.
 
 # II. Datasets
 
@@ -973,7 +973,7 @@ Transformer도 RNN, LSTM이랑 굉장히 유사한 구조로 코딩을 할 수 �
 
 **3. 모델 변경하기**
 
-`self.transformer = nn.TransformerEncoder(...)` : LSTM 코딩 파트에서 했던거와 유사하게 nn.RNN 이나 nn.LSTM 을 nn.TRansformerEncoder 로 변경해주는 과정입니다.
+`self.transformer = nn.TransformerEncoder(...)` : LSTM 코딩 파트에서 했던거와 유사하게 nn.RNN 이나 nn.LSTM 을 nn.TransformerEncoder 로 변경해주는 과정입니다.
 
 중요한 변경점들은 이정도 될 거 같습니다.
 
