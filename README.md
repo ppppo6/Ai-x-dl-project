@@ -790,7 +790,7 @@ actual    = scaler_Y.inverse_transform(Y_test.reshape(-1, 1))
 
 `predicted = scaler_Y.inverse_transform(predicted_scaled.reshape(-1, 1))` : 예측값(0~1)을 실제 발전량(kW)으로 역정규화하는 과정입니다.
 
-`actual    = scaler_Y.inverse_transform(Y_test.reshape(-1, 1))` : 실제(0~1)을 실제 발전량(kW)으로 역정규화하는 과정입니다.
+`actual    = scaler_Y.inverse_transform(Y_test.reshape(-1, 1))` : 실제값(0~1)을 실제 발전량(kW)으로 역정규화하는 과정입니다.
 
 ```python
 
