@@ -59,7 +59,7 @@ Members:
 이 데이터셋은 미국 메릴랜드주 게이더스버그에 위치한 미국 국립표준기술연구소(NIST)에 설치된 태양광 어레이에서 수집된 데이터입니다. 여기서 태양광 어레이란 태양광 패널 여러개를 직렬 또는 병렬로 연결한 것입니다.
 
 또한 이 데이터셋은 무료로 오픈되어있어 누구나 사용할 수 있습니다.
-<img width="806" height="724" alt="image" src="https://github.com/user-attachments/assets/22f36a87-af28-40e2-94a9-c47ef0cd93c4" />
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/22f36a87-af28-40e2-94a9-c47ef0cd93c4" />
 (태양광 발전소 사진)
 
 
