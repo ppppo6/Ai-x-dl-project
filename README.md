@@ -26,7 +26,7 @@ Members:
 
 ---
 
-## I. Proposal (Option A)
+# I. Proposal (Option A)
 
 ---
 
