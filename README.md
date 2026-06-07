@@ -30,7 +30,7 @@ Members:
 
 ---
 
-## II. Datasets
+# II. Datasets
 
  이 프로젝트를 위해서 저희가 사용한 데이터셋은 2개입니다.
 
@@ -107,11 +107,11 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
 ---
 
-## III. Methodology
+# III. Methodology
 
 ---
 
-## IV. Evaluation & Analysis
+# IV. Evaluation & Analysis
 
 ```python
 print('test hello world')
@@ -119,7 +119,7 @@ print('test hello world')
 
 ---
 
-## V. Related Work (e.g., existing studies)
+# V. Related Work (e.g., existing studies)
 
 사용한 데이터셋 :  
 
@@ -128,4 +128,4 @@ print('test hello world')
 
 ---
 
-## VI. Conclusion: Discussion
+# VI. Conclusion: Discussion
