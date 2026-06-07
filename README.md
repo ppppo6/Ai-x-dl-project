@@ -892,9 +892,13 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 ### 1-3. RNN 모델 결과
 
-<img width="940" height="380" alt="image" src="https://github.com/user-attachments/assets/bf2a7f58-3215-4c21-8ba8-d51bd704c969" />
+<img width="940" height="380" alt="image" src="https://github.com/user-attachments/assets/67960166-81b0-405c-bbbc-da7765c4dd3a" />
 
-<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/ad9685b2-8838-4598-aaa6-b192d3ff5fa0" />
+<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/1db72bbc-684d-4ed0-8698-f25a4281b09c" />
+
+걸린 시간 : 약 15분
+
+| 
 
 
 
@@ -906,6 +910,10 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 ### 2-3. LSTM 모델 결과
 
+<img width="940" height="380" alt="image" src="https://github.com/user-attachments/assets/bf2a7f58-3215-4c21-8ba8-d51bd704c969" />
+
+<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/ad9685b2-8838-4598-aaa6-b192d3ff5fa0" />
+
 ## 3. Transformer 모델 구축
 
 ### 3-1. Transformer 모델 설명
@@ -913,6 +921,16 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 ### 3-2. Transformer 모델 코딩
 
 ### 3-3. Transformer 모델 결과
+
+### 4. 결과 총정리
+
+| 모델 | MAE (kW) | RMSE (kW) | R² | 소요 시간 |
+|------|----------|-----------|-----|-----|
+| RNN | 2.8693 | 6.3809 | 0.6566 | 약 15분 |
+| LSTM | 2.8457 | 6.2106 | 0.6747 | 약 35분 |
+| Transformer | 3.2345 | 6.3749 | 0.6572 | 약 75분 |
+
+세 모델을 비교해본 결과 LSTM 모델이 태양광 발전량을 예측하기에 가장 적합하다고 결론을 내렸다.
 
 ---
 
