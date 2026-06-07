@@ -708,15 +708,13 @@ for epoch in range(EPOCHS):
 
 `loss = criterion(pred, batch_Y)1` : 예측값과 실제값을 비교해서 오차를 계산하는 과정입니다.
 
-`loss.backward()` : 역전파 과정입니다. 역전파
+`loss.backward()` : 역전파 과정입니다. 역전파란 오차를 줄이기 위해 가중치를 얼마나 조정해야 하는지 계산하는 과정입니다.
 
-`optimizer.step()` :            # 가중치 업데이트
+`optimizer.step()` :  `backward()`에서 계산된 방향으로 가중치를 업데이트하는 과정입니다.
 
 이 모델이 50번동안 반복하는 과정은 이렇게 됩니다.
 
 - 예측 -> 오차계산 -> 역전파 -> 가중치 업데이트 -> 다시 예측 ~..
-
-epoch_loss = 0`
 
 ---
 
