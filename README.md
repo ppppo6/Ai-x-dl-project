@@ -416,7 +416,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset  ##torch에서 DataLoader, TensorDataset을 가져옴.
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score  ##MAE, RMSE, R² 계산 함수를 scikit-learn에서 불러옴.
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score  ##scikit-learn에서 MAE, RMSE, R² 계산 함수를 불러옴.
 import matplotlib.pyplot as plt
 import pickle
 
@@ -435,6 +435,36 @@ RNN 모델 구축에 필요한 패키지들은 torch, numpy, scikit-learn, matpl
 +) torch의 하위 패키지인 DataLoader, TensorDataset는 데이터를 묶을 수 있게 해주어 많은 데이터를 나눠서 처리할 수 있게 해줍니다.
 
 #### STEP 1. 데이터 로드하기
+
+```python
+
+# ============================================================
+# Step 1: 데이터 로드
+# ============================================================
+print("Step 1: 데이터 로드 중...")
+X_train = np.load(f'{data_dir}/X_train.npy')
+X_test  = np.load(f'{data_dir}/X_test.npy')
+Y_train = np.load(f'{data_dir}/Y_train.npy')
+Y_test  = np.load(f'{data_dir}/Y_test.npy')
+
+with open(f'{data_dir}/scaler_Y.pkl', 'rb') as f:
+    scaler_Y = pickle.load(f)
+
+print(f"X_train: {X_train.shape}")
+print(f"X_test:  {X_test.shape}")
+
+# PyTorch Tensor 변환
+X_train_t = torch.FloatTensor(X_train)
+Y_train_t = torch.FloatTensor(Y_train).squeeze()
+X_test_t  = torch.FloatTensor(X_test)
+Y_test_t  = torch.FloatTensor(Y_test).squeeze()
+
+train_dataset = TensorDataset(X_train_t, Y_train_t)
+train_loader  = DataLoader(train_dataset, batch_size=64, shuffle=False)
+
+```
+
+ㅇ
 
 #### Step 2. RNN 모델 구축하기
 
