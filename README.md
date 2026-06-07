@@ -114,6 +114,8 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
 # III. Methodology
 
+ ## 데이터 전처리 과정 ##
+
 ---
 
 # IV. Evaluation & Analysis
