@@ -396,7 +396,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ---
 
-## 1. RNN 모델
+## 1. RNN 모델 구축
 
 ### 1-1. RNN 모델 설명
 
@@ -416,7 +416,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ### 1-3. RNN 모델 결과
 
-## 2. LSTM 모델
+## 2. LSTM 모델 구축
 
 ### 2-1. LSTM 모델 설명
 
@@ -424,7 +424,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ### 2-3. LSTM 모델 결과
 
-## 3. Transformer 모델
+## 3. Transformer 모델 구축
 
 ### 3-1. Transformer 모델 설명
 
