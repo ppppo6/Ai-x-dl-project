@@ -914,6 +914,24 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 ### 2-2. LSTM 모델 코딩
 
+**LSTM 모델을 코딩하는 과정은 RNN 이랑 거의 모든게 동일합니다. rnn/RNN 만 lstm/LSTM으로 바꿔주면 바로 LSTM 모델을 만들 수 있습니다. <br> 따라서 자세한 설명은 RNN 코딩 파트에서 해놨으니 어느 부분을 바꾸는지만 적어놓겠습니다.**
+
+```python
+
+# RNN
+self.rnn = nn.RNN(...)
+out, _ = self.rnn(x)
+
+# LSTM
+self.lstm = nn.LSTM(...)
+out, _ = self.lstm(x)
+
+```
+
+`self.rnn` -> `self.lstm`
+
+`nn.RNN` -> `nn.LSTM` 등등.. 이것만 바꿔주면 됩니다.
+
 ### 2-3. LSTM 모델 결과
 
 <img width="940" height="380" alt="image" src="https://github.com/user-attachments/assets/bf2a7f58-3215-4c21-8ba8-d51bd704c969" />
@@ -952,7 +970,7 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 ---
 
-### 4. 결과 총정리
+## 4. 결과 총정리
 
 | 모델 | MAE (kW) | RMSE (kW) | R² | 소요 시간 |
 |------|----------|-----------|-----|-----|
