@@ -340,6 +340,23 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 # IV. Methodology
 
+모델을 구축하기 앞서 최종 전처리 과정을 통해 만들어진 파일에 대해서 간단히 알아보겠습니다.
+
+X_train.npy : 학습용 입력 데이터입니다. (shape: 13880, 168, 6)
+13880개 샘플이 있으며, 각 샘플은 과거 168개 시점의 기상 변수 6개로 구성되었습니다.
+
+X_test.npy :
+
+Y_train.npy :
+
+Y_test.npy :
+
+scaler_X.pkl :
+
+scaler_Y.pkl :
+
+
+
 ## 1. RNN 모델
 
 ### 1-1. RNN 모델 설명
