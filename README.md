@@ -126,7 +126,7 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
  또한 파일을 하나로 합칠 때, 실제 사용할 발전량 컬럼을 제외한 나머지 컬럼들은 삭제했습니다.
 
-[preprocessing 3-1.py](./preprocessing/preprocessing_1-1.py)
+[preprocessing 1-1.py](./preprocessing/preprocessing_1-1.py)
 
  ```python
 
@@ -176,6 +176,32 @@ combined.to_csv(output_file, index=False)
 **5. 발전량을 소수점 반올림하기 (3자리)**
 
 발전량이 0.6677777 같이 나오는 경우 소수점 3~4자리 이후부터는 거의 무의미하기 때문에 깔끔한 데이터 처리를 위해 반올림했습니다.
+
+[preprocessing 1-2.py](./preprocessing/preprocessing_1-2.py)
+
+
+```python
+
+"""코드 일부분"""
+
+# ============================================================
+# Step 3: 30분 단위 리샘플링
+# ============================================================
+print("\nStep 3: 30분 단위 리샘플링 중...")
+df = df.set_index('timestamp')
+
+# 30분 평균
+df_30min = df['power_kW'].resample('30T').mean()
+df_30min = df_30min.reset_index()
+df_30min.columns = ['timestamp', 'power_kW']
+
+print(f"리샘플링 완료: {len(df_30min):,}행 (30분 단위)")
+
+```
+
+---
+
+
 
 
 
