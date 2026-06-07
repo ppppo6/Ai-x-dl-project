@@ -398,7 +398,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 마지막으로 시작하기 전에 PyTorch에 대해서 간단하게 알아보겠습니다.
 
-PyTorch란
+@@작성 필요
 
 ---
 
@@ -960,6 +960,25 @@ out, _ = self.lstm(x)
 
 ### 3-2. Transformer 모델 코딩
 
+Transformer도 RNN, LSTM이랑 굉장히 유사한 구조로 코딩을 할 수 있습니다. 하지만 변경을 해야하는 부분이 몇 가지 있습니다. 왜냐하면 기존의 RNN, LSTM은 데이터를 순서대로 하나씩 읽지만, Transformer는 시퀀스 데이터 전체를 한번에 본다는 특징(Self-Attention)을 지닙니다. 이러한 이유 때문에 몇 가지 변경점들이 생깁니다.
+
+1. Input Projection 추가하기
+
+`self.input_projection = nn.Linear(6, 64)` : 입력 변수 6개를 64차원으로 확장하는 과정입니다. (Self-Attention에 맞는 차원으로 변환하는 과정입니다.)
+
+2. Positional Encoding 추가하기
+
+`self.pos_encoding = nn.Parameter(torch.randn(1, 168, 64))` : 순서 정보를 직접 넣어주는 과정입니다. (Transformer는 전체를 한꺼번에 보기 때문에
+순서 정보가 자동으로 반영되지 않습니다. 따라서 직접 순서 정보를 넣어줘야 합니다.)
+
+3. 모델 변경하기
+
+`self.transformer = nn.TransformerEncoder(...)` : LSTM 코딩 파트에서 했던거와 동일한 과정입니다.
+
+중요한 변경점들은 이정도 될 거 같습니다.
+
+---
+
 ### 3-3. Transformer 모델 결과
 
 <img width="940" height="380" alt="image" src="https://github.com/user-attachments/assets/d3c0f192-84ae-4c4a-93ce-ce9f46f9a392" />
@@ -990,7 +1009,7 @@ out, _ = self.lstm(x)
 
 # V. Evaluation & Analysis
 
-~~시작
+@@작성 필요
 
 ---
 
@@ -1004,15 +1023,15 @@ NSRDB 사이트 (기상 상황 데이터) - https://nsrdb.nlr.gov/data-viewer
 
 --
 
-RNN 모델 설명 :
+RNN 모델 설명 : @@작성 필요
 
 
 
-LSTM 모델 설명 :
+LSTM 모델 설명 : @@작성 필요
 
 
 
-Transformer 모델 설명 :
+Transformer 모델 설명 : @@작성 필요
 
 
 
@@ -1020,4 +1039,4 @@ Transformer 모델 설명 :
 
 # VII. Conclusion: Discussion
 
-~~시작
+@@작성 필요
