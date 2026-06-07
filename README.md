@@ -515,19 +515,104 @@ train_loader  = DataLoader(train_dataset, batch_size=64, shuffle=False)
 
 또한 저희가 다루는 데이터는 시계열 데이터여서 순서를 섞으면 안됩니다. 따라서 `shuffle=False`로 했습니다.
 
-
-
-
-
-
+---
 
 #### Step 2. RNN 모델 구축하기
 
+```python
+
+# ============================================================
+# Step 2: RNN 모델 정의
+# ============================================================
+print("\nStep 2: RNN 모델 구축 중...")
+
+class SolarRNN(nn.Module):
+    def __init__(self, input_size=6, hidden_size=64, num_layers=2):
+        super(SolarRNN, self).__init__()
+        self.rnn = nn.RNN(
+            input_size  = input_size,
+            hidden_size = hidden_size,
+            num_layers  = num_layers,
+            batch_first = True,
+            dropout     = 0.1
+        )
+        self.fc = nn.Sequential(
+            nn.Linear(hidden_size, 32),
+            nn.ReLU(),
+            nn.Linear(32, 1)
+        )
+
+    def forward(self, x):
+        out, _ = self.rnn(x)
+        return self.fc(out[:, -1, :]).squeeze()
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model  = SolarRNN().to(device)
+print(f"디바이스: {device}")
+print(f"파라미터 수: {sum(p.numel() for p in model.parameters()):,}개")
+
+```
+
+**코드 설명**
+
+```python
+
+class SolarRNN(nn.Module):
+    def __init__(self, input_size=6, hidden_size=64, num_layers=2):
+        super(SolarRNN, self).__init__()
+
+```
+
+SolarRNN이라는 모델 클래스를 생성했습니다.
+
+`hidden_size=64` : 기억 저장 공간 뉴런 수가 64개입니다.
+`num_layers=2` : RNN 층을 2개 쌓았습니다.
+
+```python
+
+ self.rnn = nn.RNN(
+            input_size  = input_size,
+            hidden_size = hidden_size,
+            num_layers  = num_layers,
+            batch_first = True,
+            dropout     = 0.1
+        )
+
+```
+
+```python
+
+ self.fc = nn.Sequential(
+            nn.Linear(hidden_size, 32),
+            nn.ReLU(),
+            nn.Linear(32, 1)
+        )
+
+```
+
+```python
+
+  def forward(self, x):
+        out, _ = self.rnn(x)
+        return self.fc(out[:, -1, :]).squeeze()
+
+```
+
+
+---
+
+
 #### Step 3. 학습시키기
+
+---
 
 #### Step 4. 성능 평가하기
 
+---
+
 #### STEP 5. 결과 그래프 그리기
+
+----
 
 ### 1-3. RNN 모델 결과
 
