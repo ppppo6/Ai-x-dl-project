@@ -159,7 +159,7 @@ combined = combined.sort_values('timestamp').reset_index(drop=True)
 combined.to_csv(output_file, index=False)
 ```
 
- ### 1-2. 전처리①
+ ### 1-2. 전처리 ①
 
  이전에는 365개의 파일을 1개의 csv 파일로 합쳤었습니다.
 
@@ -208,7 +208,7 @@ print(f"리샘플링 완료: {len(df_30min):,}행 (30분 단위)")
 
  ## 2. 기상 상황 데이터 (Weather_Data) 전처리
 
-  ### 2-1. 전처리②
+  ### 2-1. 전처리 ②
 
  이번에도 총 5개의 과정들을 수행하였습니다.
 
