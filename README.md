@@ -126,6 +126,8 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
  또한 파일을 하나로 합칠 때, 실제 사용할 발전량 컬럼을 제외한 나머지 컬럼들은 삭제했습니다.
 
+ [merge_PV.generation.py](./merge_PV.generation.py)
+
  ```python
 
 """코드 일부분"""
