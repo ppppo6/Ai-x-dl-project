@@ -404,6 +404,8 @@ PyTorch란
 
 ## 1. RNN 모델 구축
 
+---
+
 ### 1-1. RNN 모델 설명
 
 ### 1-2. RNN 모델 코딩
@@ -898,9 +900,13 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 걸린 시간 : 약 15분
 
-| 
+**MAE** : 2.8693kW
 
+**RMSE** : 6.3809kW
 
+**R²** : 0.6566
+
+---
 
 ## 2. LSTM 모델 구축
 
@@ -914,6 +920,16 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 <img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/ad9685b2-8838-4598-aaa6-b192d3ff5fa0" />
 
+걸린 시간 : 약 35분
+
+**MAE** : 2.8457kW
+
+**RMSE** : 6.2106kW
+
+**R²** : 0.6747
+
+---
+
 ## 3. Transformer 모델 구축
 
 ### 3-1. Transformer 모델 설명
@@ -921,6 +937,20 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 ### 3-2. Transformer 모델 코딩
 
 ### 3-3. Transformer 모델 결과
+
+<img width="940" height="380" alt="image" src="https://github.com/user-attachments/assets/d3c0f192-84ae-4c4a-93ce-ce9f46f9a392" />
+
+<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/20ee8037-e0a8-4689-9bce-09f3c0c6ac6e" />
+
+걸린 시간 : 약 75분
+
+**MAE** : 2.8728kW
+
+**RMSE** : 6.3749kW
+
+**R²** : 0.6572
+
+---
 
 ### 4. 결과 총정리
 
