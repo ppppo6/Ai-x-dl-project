@@ -892,6 +892,9 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 ### 1-3. RNN 모델 결과
 
+<img width="940" height="379" alt="image" src="https://github.com/user-attachments/assets/bf2a7f58-3215-4c21-8ba8-d51bd704c969" />
+
+
 ## 2. LSTM 모델 구축
 
 ### 2-1. LSTM 모델 설명
