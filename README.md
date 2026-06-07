@@ -80,8 +80,15 @@ Members:
 
 여기서 인버터란 태양광 패널이 생산한 직류(DC) 전기를 실생활에서 사용 가능한 교류(AC)로 변환하는 장치입니다.
 
+---
 
+ ### 사용한 데이터셋 2) NSRDB - Weather Data ###
 
+#### 데이터셋 특징 ####
+
+ 이 데이터셋은 미국 국립재생에너지연구소(NREL)에서 제공하는 태양 복사량 및 기상 상황 데이터베이스입니다. (NSRDB: National Solar Radiation Database)
+ 
+  NSRDB란 National Solar Radiation Database의 줄임말이며
 
 
 ---
