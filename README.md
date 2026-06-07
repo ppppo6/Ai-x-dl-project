@@ -784,6 +784,30 @@ actual    = scaler_Y.inverse_transform(Y_test.reshape(-1, 1))
 
 `predicted_scaled = model(X_test_t.to(device)).cpu().numpy()` : 학습을 완료한 모델로 Test 데이터를 예측하는 과정입니다. 이때 값은 0~1로 정규화되어 나옵니다.
 
+`predicted = scaler_Y.inverse_transform(predicted_scaled.reshape(-1, 1))` : 예측값(0~1)을 실제 발전량(kW)으로 역정규화하는 과정입니다.
+
+`actual    = scaler_Y.inverse_transform(Y_test.reshape(-1, 1))` : 실제(0~1)을 실제 발전량(kW)으로 역정규화하는 과정입니다.
+
+```python
+
+mae  = mean_absolute_error(actual, predicted)
+rmse = np.sqrt(mean_squared_error(actual, predicted))
+r2   = r2_score(actual, predicted)
+
+```
+
+`mae  = mean_absolute_error(actual, predicted)` : 역정규화된 값으로 MAE를 계산하는 과정입니다.
+
+**MAE(Mean Absolute Error)** 는 평균 절대 오차를 뜻하며, 예측값과 실제값 사이의 오차의 평균을 나타냅니다. MAE가 작을수록 모델 성능이 좋은 것입니다.
+
+`rmse = np.sqrt(mean_squared_error(actual, predicted))` : 역정규화된 값으로 RMSE를 계산하는 과정입니다.
+
+**RMSE(Root Mean Square Error)** 는 제곱근 평균 오차를 뜻하며, MAE에 비해 큰 오차에 더 민감하다는 특징이 있습니다. RMSE도 작을수록 모델 성능이 좋은 것입니다.
+
+`r2   = r2_score(actual, predicted)` : 역정규화된 값으로 R²를 계산하는 과정입니다.
+
+**R²(R-Squared)** 는 결정 계수를 뜻하며 1에 가까울 수록 모델 성능이 좋은 것입니다. 보통 0.7이상이면 양호한 편에 속한다고 판단합니다.
+
 ---
 
 #### STEP 5. 결과 그래프 그리기
