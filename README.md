@@ -19,7 +19,7 @@ Members:
 
 - [I. Proposal](#i-proposal-option-a)
 - [II. Datasets](#ii-datasets)
-- [III. Preprocessing](#iii-preprocessing)
+- [III. Data Preprocessing](#iii-data-preprocessing)
 - [IV. Methodology](#iv-methodology)
 - [V. Evaluation & Analysis](#v-evaluation--analysis)
 - [VI. Related Work](#vi-related-work-eg-existing-studies)
@@ -113,7 +113,7 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
 ---
 
-# III. Preprocessing
+# III. Data Preprocessing
 
  ## 데이터 전처리 과정 ##
 
