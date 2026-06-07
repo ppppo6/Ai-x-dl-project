@@ -256,7 +256,7 @@ print("기존 시간 컬럼 제거 완료")
 
   (Inner Join 형식을 사용하면 두 데이터셋에 모두 존재하는 timestamp만 합칠 수 있다. 따라서 문제가 안생김)
 
- [preprocessing 3.py](./preprocessing/preprocessing_3.py)
+ [preprocessing_3.py](./preprocessing/preprocessing_3.py)
 
  ```python
 
