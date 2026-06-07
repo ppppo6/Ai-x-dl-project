@@ -466,12 +466,56 @@ train_loader  = DataLoader(train_dataset, batch_size=64, shuffle=False)
 
 ```
 
-최종 데이터 전처리 과정에서 만들었던 4개의 .npy 파일을 불러왔습니다.
+**코드 설명**
+
+```python
 
 X_train = np.load(f'{data_dir}/X_train.npy')
 X_test  = np.load(f'{data_dir}/X_test.npy')
 Y_train = np.load(f'{data_dir}/Y_train.npy')
 Y_test  = np.load(f'{data_dir}/Y_test.npy')
+
+```
+
+최종 데이터 전처리 과정에서 만들었던 4개의 .npy 파일을 로드했습니다.
+
+```python
+
+with open(f'{data_dir}/scaler_Y.pkl', 'rb') as f:
+    scaler_Y = pickle.load(f)
+
+```
+
+최종 데이터 전처리 과정에서 만들었던 scaler_Y.pkl 파일을 로드했습니다.
+
+이것은 나중에 모델 예측값(0~1)을 실제 발전량(kW)으로 역정규화할 때 사용됩니다.
+
+```python
+
+X_train_t = torch.FloatTensor(X_train)
+Y_train_t = torch.FloatTensor(Y_train).squeeze()
+X_test_t  = torch.FloatTensor(X_test)
+Y_test_t  = torch.FloatTensor(Y_test).squeeze()
+
+```
+
+PyTorch 모델은 Tensor 형태로만 입력을 받을 수 있기 때문에 numpy 배열을 PyTorch Tensor형태로 데이터 형식을 변환했습니다.
+
+또한 `.squeeze()`의 기능은 Y의 크기(shape)의 차원을 축소시키는 것입니다. 차원을 축소시키는 이유는 모델 출력값과 shape를 
+맞추기 위함입니다.
+
+```python
+
+train_dataset = TensorDataset(X_train_t, Y_train_t)
+train_loader  = DataLoader(train_dataset, batch_size=64, shuffle=False)
+
+```
+
+
+
+
+
+
 
 #### Step 2. RNN 모델 구축하기
 
