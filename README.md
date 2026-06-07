@@ -142,10 +142,6 @@ RNN은 순서가 있는 데이터를 처리하는데 강점을 보입니다. (ex
 Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self Attention
 따라서 Transformer는 병렬 처리가 가능하고 데이터가 많을수록 효과적입니다.
 
-{공정한 비교를 하기 위해서 딥러닝 모델을 제외하고 Epoch나 Batch Size, Train/Test 비율 같은 것들은 모두 동일하게 진행할 예정입니다}
-
-{더욱 자세한 설명을 추가할 예정입니다}
-
 ---
 
 ### 사용할 DL 라이브러리 : PyTorch
@@ -159,27 +155,16 @@ Transformer는 RNN 계열 모델과는 다른 방식을 이용합니다. -> Self
 ```python
 print('Work-In-Process')
 ```
-### !!임시 - Blog_In_Progress 제출용!! LLM을 이용해 간단히 코드를 짜서 Transformer를 이용해 그래프 도출해봤습니다 -> 수정 예정
-
-<img width="1500" height="1100" alt="image" src="https://github.com/user-attachments/assets/814eed5a-ff2f-4bc5-bfdf-1e6111902568" />
-(걸린시간 : 약 20분)
-
-{평가 지표 : MAE, RMSE, R^2 ??}
 
 ---
 
-| 이름 | 나이 | 직업 |
-| --- | --- | --- |
-| 철수 | 25 | 개발자 |
-| 영희 | 30 | 디자이너 |
 
 ## V. Related Work (e.g., existing studies)
 
 사용한 데이터셋 :  
 
-https://pvdata.nist.gov/
-
-Transformer 관련 내용 :  강의자료 07-beyond
+발전량 데이터 - https://pvdata.nist.gov/
+기상 상황 데이터 - https://nsrdb.nlr.gov/data-viewer
 
 ---
 
