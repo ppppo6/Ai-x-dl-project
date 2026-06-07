@@ -415,8 +415,8 @@ PyTorch란
 import numpy as np
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader, TensorDataset
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from torch.utils.data import DataLoader, TensorDataset  ##torch에서 DataLoader, TensorDataset을 가져옴.
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score  ##MAE, RMSE, R² 계산 함수를 scikit-learn에서 불러옴.
 import matplotlib.pyplot as plt
 import pickle
 
