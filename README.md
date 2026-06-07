@@ -704,7 +704,17 @@ for epoch in range(EPOCHS):
 
 50번 반복하면서 모델을 학습시키는 과정입니다.
 
-`model.train()
+`pred = model(batch_X)` : 64개의 배치 데이터를 모델에 넣어서 발전량을 예측하는 과정입니다.
+
+`loss = criterion(pred, batch_Y)1` : 예측값과 실제값을 비교해서 오차를 계산하는 과정입니다.
+
+`loss.backward()` : 역전파 과정입니다. 역전파
+
+`optimizer.step()` :            # 가중치 업데이트
+
+이 모델이 50번동안 반복하는 과정은 이렇게 됩니다.
+
+- 예측 -> 오차계산 -> 역전파 -> 가중치 업데이트 -> 다시 예측 ~..
 
 epoch_loss = 0`
 
