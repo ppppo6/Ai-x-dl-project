@@ -351,6 +351,53 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 | **scaler_X.pkl** | 입력 변수 6개를 정규화할 때 사용한 MinMaxScaler 저장 파일이다. |
 | **scaler_Y.pkl** | 발전량을 정규화할 때 사용한 MinMaxScaler 저장 파일이다. <br> 모델 예측값(0~1)을 실제 발전량(kW)으로 역정규화할 때 사용하기도 한다. |
 
+또한 공정한 비교를 위해서 모델을 제외한 나머지 학습 조건같은 것들을 모두 동일하게 맞추고 시작했습니다.
+
+### 동일하게 맞춘 것들
+
+1. 데이터
+
+| 데이터 |  |
+| ---| --- |
+| 항목 | 설정값 |
+|------|--------|
+
+**1. 데이터**
+
+| 항목 | 설정값 |
+|------|--------|
+| 데이터셋 | X_train.npy, X_test.npy, Y_train.npy, Y_test.npy |
+| 입력 변수 | Temperature, Clearsky GHI, GHI, Relative Humidity, Pressure, Wind Speed |
+| 예측 대상 | power_kW |
+| 정규화 | MinMaxScaler (0~1) |
+| Window Size | 168 |
+| Train/Test 비율 | 80% / 20% |
+
+### 학습 조건
+
+| 항목 | 설정값 |
+|------|--------|
+| Epoch | 50 |
+| Batch Size | 64 |
+| Learning Rate | 0.001 |
+| Optimizer | Adam |
+| Loss Function | MSELoss |
+
+### 모델 내부 구조
+
+| 항목 | 설정값 |
+|------|--------|
+| hidden_size | 64 |
+| num_layers | 2 |
+| dropout | 0.1 |
+| 출력층 | Linear(64→32) → ReLU → Linear(32→1) |
+
+### 평가 지표
+
+| 항목 | 설정값 |
+|------|--------|
+| 평가 지표 | MAE, RMSE, R² |
+| 평가 데이터 | X_test, Y_test |
 
 
 ## 1. RNN 모델
