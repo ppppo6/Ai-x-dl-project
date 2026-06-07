@@ -151,7 +151,7 @@ combined = combined.sort_values('timestamp').reset_index(drop=True)
 combined.to_csv(output_file, index=False)
 ```
 
- #### 1-2. 파일 병합시키기
+ #### 1-2. 전처리①
 
 ---
 
