@@ -19,10 +19,11 @@ Members:
 
 - [I. Proposal](#i-proposal-option-a)
 - [II. Datasets](#ii-datasets)
-- [III. Methodology](#iii-methodology)
-- [IV. Evaluation & Analysis](#iv-evaluation--analysis)
-- [V. Related Work](#v-related-work-eg-existing-studies)
-- [VI. Conclusion](#vi-conclusion-discussion)
+- [III. Preprocessing](#iii-preprocessing)
+- [IV. Methodology](#iv-methodology)
+- [V. Evaluation & Analysis](#v-evaluation--analysis)
+- [VI. Related Work](#vi-related-work-eg-existing-studies)
+- [VII. Conclusion](#vii-conclusion-discussion)
 
 ---
 
@@ -112,7 +113,7 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
 ---
 
-# III. Methodology
+# III. Preprocessing
 
  ## 데이터 전처리 과정 ##
 
@@ -207,7 +208,11 @@ print(f"리샘플링 완료: {len(df_30min):,}행 (30분 단위)")
 
 ---
 
-# IV. Evaluation & Analysis
+# IV. Methodology
+
+
+
+# V. Evaluation & Analysis
 
 ```python
 print('test hello world')
@@ -215,7 +220,7 @@ print('test hello world')
 
 ---
 
-# V. Related Work (e.g., existing studies)
+# VI. Related Work (e.g., existing studies)
 
 사용한 데이터셋 :  
 
@@ -225,4 +230,4 @@ NSRDB 사이트 (기상 상황 데이터) - https://nsrdb.nlr.gov/data-viewer
 
 ---
 
-# VI. Conclusion: Discussion
+# VII. Conclusion: Discussion
