@@ -126,7 +126,7 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
  또한 파일을 하나로 합칠 때, 실제 사용할 발전량 컬럼을 제외한 나머지 컬럼들은 삭제했습니다.
 
-[preprocessing 3-1.py](./preprocessing/preprocessing_3-1.py)
+[preprocessing 3-1.py](./preprocessing/preprocessing_1-1.py)
 
  ```python
 
@@ -171,7 +171,7 @@ combined.to_csv(output_file, index=False)
 
 4. 결측치 제거하기
 
-- 결측치가 존재할 경우 모델 학습에 오류가 날 수도 있기에 제거해줬다. (1개 발견)
+- 결측치가 존재할 경우 모델 학습에 오류가 날 수도 있기에 제거해줬습니다. (1개 발견)
 
 5. 발전량을 소수점 반올림하기 (3자리)
 
