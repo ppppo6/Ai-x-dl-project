@@ -62,7 +62,7 @@ Members:
 
 <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/22f36a87-af28-40e2-94a9-c47ef0cd93c4" />
 
-     (태양광 발전소 사진)
+  (태양광 발전소 사진)
 
 
 
