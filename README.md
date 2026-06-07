@@ -271,6 +271,53 @@ print(f"합치기 완료: {len(df):,}행")
 
 ```
 
+ ## 4. 두 데이터셋 합치기
+
+마지막으로 합친 데이터셋을 최종적으로 전처리하는 과정을 진행하였습니다. 어찌보면 전처리 과정에서 가장 중요한 작업이라고 할 수도 있습니다.
+
+**1. 컬럼들을 입력 변수 / 예측 대상 으로 분리하기**
+
+입력 변수 : Temperature , Clearsky GHI , GHI , Relative Humidity , Pressure , Wind Speed (기상 상황)  /  예측 대상 : power_kW (발전량)
+
+**2. 정규화하기 (0~1)**
+
+변수마다 숫자 범위가 달라 모델이 특정 변수에 편향되는 것을 방지하기 위해 정규화를 수행했다.
+
++) 역정규화 과정도 추가함 (역정규화 : 예측 결과를 실제 단위(kW)로 해석하기 위해 정규화 이전 값으로 되돌리는 과정)
+
+**3. 시퀀스 생성하기 (Window Size = 168) --> (원래 48이였지만 RNN 이랑 Transformer 사이의 성능 차이가 크게 안날것을 우려하여 168로 늘림) / (48 - 1일치 / 168 - 3.5일치)**
+
+과거 168개 데이터(3.5일치)를 하나의 묶음으로 만들어 다음 시점(30분)의 발전량을 예측하는 형태로 변환하였다. 
+
+
+**4. Train / Test 분할하기 (Train - 80% / Test - 20%)**
+
+시계열 데이터의 특성때문에 시간 순서대로 앞 80%를 Train, 뒤 20%를 Test로 분할하였다. 
+
+```python
+
+"""코드 일부분""
+
+# ============================================================
+# Step 4: 시퀀스 생성
+# ============================================================
+print("\nStep 4: 시퀀스 생성 중...")
+WINDOW_SIZE = 168  # 30분 × 48 = 24시간
+
+def create_sequences(X, Y, window):
+    Xs, Ys = [], []
+    for i in range(len(X) - window):
+        Xs.append(X[i:i+window])   # 과거 48개 기상 데이터
+        Ys.append(Y[i+window])     # 다음 시점 발전량
+    return np.array(Xs), np.array(Ys)
+
+X_seq, Y_seq = create_sequences(X_scaled, Y_scaled, WINDOW_SIZE)
+print(f"시퀀스 생성 완료")
+print(f"X shape: {X_seq.shape}  → (샘플수, {WINDOW_SIZE}개, {len(feature_cols)}개 변수)")
+print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
+
+```
+
 ---
 
 ---
