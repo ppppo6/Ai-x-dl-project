@@ -326,9 +326,25 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ---
 
----
-
 # IV. Methodology
+
+## 1. RNN 모델
+
+### 1-1. RNN 모델 설명
+
+### 1-2. RNN 모델 코딩
+
+## 2. LSTM 모델
+
+### 2-1. LSTM 모델 설명
+
+### 2-2. LSTM 모델 코딩
+
+## 3. Transformer 모델
+
+### 3-1. Transformer 모델 설명
+
+### 3-2. Transformer 모델 코딩
 
 ---
 
