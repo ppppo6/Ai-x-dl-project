@@ -396,6 +396,12 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ---
 
+마지막으로 시작하기 전에 PyTorch에 대해서 간단하게 알아보겠습니다.
+
+PyTorch란
+
+---
+
 ## 1. RNN 모델 구축
 
 ### 1-1. RNN 모델 설명
@@ -403,6 +409,30 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 ### 1-2. RNN 모델 코딩
 
 #### STEP 0. 필요한 패키지
+
+```python
+
+import numpy as np
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader, TensorDataset
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import matplotlib.pyplot as plt
+import pickle
+
+```
+
+RNN 모델 구축에 필요한 패키지들은 torch, numpy, scikit-learn, matplotlib, pickle이 있습니다.
+
+| 패키지 | 용도 |
+|--------|------|
+| torch | RNN/LSTM/Transformer 모델을 구축하고 학습할 때 사용됨 |
+| numpy | .npy 파일을 로드하고 수치 연산을 할 때 사용됨 |
+| scikit-learn | MinMaxScaler(정규화)나 MAE, RMSE, R² 값을 구할 때 사용됨  |
+| matplotlib | 그래프 시각화 작업을 할 때 사용됨 |
+| pickle | .pkl 파일을 로드할 때 사용됨 (Python 기본 내장 패키지) |
+
++) torch의 하위 패키지인 DataLoader, TensorDataset는 데이터를 묶을 수 있게 해주어 많은 데이터를 나눠서 처리할 수 있게 해줍니다.
 
 #### STEP 1. 데이터 로드하기
 
