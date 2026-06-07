@@ -114,7 +114,7 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 ## IV. Evaluation & Analysis
 
 ```python
-print('Work-In-Process')
+print('test hello world')
 ```
 
 ---
