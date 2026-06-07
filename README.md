@@ -326,6 +326,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 ---
 
 [데이터셋 다운로드](https://www.kaggle.com/datasets/ppppo6/dataset-proj)
+
 각 과정에서 나온 결과 파일과 최종으로 나온 파일들을 Kaggle에 업로드하였습니다. Github에 올리려 했지만 용량이 너무 커서 올리지 못했습니다.
 
 ---
