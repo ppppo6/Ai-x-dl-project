@@ -704,9 +704,11 @@ for epoch in range(EPOCHS):
 
 50번 반복하면서 모델을 학습시키는 과정입니다.
 
+`model.train()` : 학습 모드로 설정했습니다.
+
 `pred = model(batch_X)` : 64개의 배치 데이터를 모델에 넣어서 발전량을 예측하는 과정입니다.
 
-`loss = criterion(pred, batch_Y)1` : 예측값과 실제값을 비교해서 오차를 계산하는 과정입니다.
+`loss = criterion(pred, batch_Y)` : 예측값과 실제값을 비교해서 오차를 계산하는 과정입니다.
 
 `loss.backward()` : 역전파 과정입니다. 역전파란 오차를 줄이기 위해 가중치를 얼마나 조정해야 하는지 계산하는 과정입니다.
 
@@ -715,6 +717,28 @@ for epoch in range(EPOCHS):
 이 모델이 50번동안 반복하는 과정은 이렇게 됩니다.
 
 - 예측 -> 오차계산 -> 역전파 -> 가중치 업데이트 -> 다시 예측 ~..
+
+```python
+
+avg_train_loss = epoch_loss / len(train_loader)
+    train_losses.append(avg_train_loss)
+
+    # Test
+    model.eval()
+    with torch.no_grad():
+        test_pred = model(X_test_t.to(device))
+        test_loss = criterion(test_pred, Y_test_t.to(device)).item()
+        test_losses.append(test_loss)
+
+```
+
+`avg_train_loss = epoch_loss / len(train_loader)` : 평균 Train loss를 계산하는 과정입니다. (평균 Train loss = 배치별 loss를 합한 값 / 배치 수)
+
+`model.eval()` : 평가 모드로 설정했습니다.
+
+`with torch.no_grad()` : 평가 상황에서는 필요하지 않은 기울기를 계산하지 않는다는 뜻입니다.
+
+`test_loss = criterion(test_pred, Y_test_t.to(device)).item()` : 예측값과 실제값의 오차를 계산하는 과정입니다.
 
 ---
 
