@@ -623,8 +623,86 @@ SolarRNN이라는 모델 클래스를 생성했습니다.
 
 ---
 
-
 #### Step 3. 학습시키기
+
+```python
+
+# ============================================================
+# Step 3: 학습
+# ============================================================
+print("\nStep 3: 학습 시작...")
+
+criterion  = nn.MSELoss()
+optimizer  = torch.optim.Adam(model.parameters(), lr=0.001)
+
+EPOCHS = 50
+train_losses = []
+test_losses  = []
+
+for epoch in range(EPOCHS):
+    # Train
+    model.train()
+    epoch_loss = 0
+    for batch_X, batch_Y in train_loader:
+        batch_X, batch_Y = batch_X.to(device), batch_Y.to(device)
+        optimizer.zero_grad()
+        pred = model(batch_X)
+        loss = criterion(pred, batch_Y)
+        loss.backward()
+        optimizer.step()
+        epoch_loss += loss.item()
+
+    avg_train_loss = epoch_loss / len(train_loader)
+    train_losses.append(avg_train_loss)
+
+    # Test
+    model.eval()
+    with torch.no_grad():
+        test_pred = model(X_test_t.to(device))
+        test_loss = criterion(test_pred, Y_test_t.to(device)).item()
+        test_losses.append(test_loss)
+
+    if (epoch + 1) % 10 == 0:
+        print(f"Epoch [{epoch+1:3d}/{EPOCHS}]  Train Loss: {avg_train_loss:.6f}  Test Loss: {test_loss:.6f}")
+
+```
+
+**코드 설명**
+
+```python
+
+criterion  = nn.MSELoss()
+optimizer  = torch.optim.Adam(model.parameters(), lr=0.001)
+EPOCHS = 50
+
+```
+
+`criterion` : 평균 제곱 오차를 사용하는 오차 계산 함수입니다.
+
+`optimizer` : Adam 최적화 알고리즘으로 가중치를 업데이트하는 방법을 뜻합니다. Adam 알고리즘은 오차를 줄이기 위해 가중치를 효율적으로 조정해주기 때문에 사용하게 되었습니다.
+
+`lr=0.001` : 학습률을 뜻하며, 한 번에 가중치를 얼마나 조정할지 결정해줍니다.
+
+`EPOCHS = 50` : 모델이 전체 데이터를 50번 학습한다는 것을 뜻합니다.
+
+```python
+
+for epoch in range(EPOCHS):
+    # Train
+    model.train()
+    epoch_loss = 0
+    for batch_X, batch_Y in train_loader:
+        batch_X, batch_Y = batch_X.to(device), batch_Y.to(device)
+        optimizer.zero_grad()
+        pred = model(batch_X)
+        loss = criterion(pred, batch_Y)
+        loss.backward()
+        optimizer.step()
+        epoch_loss += loss.item()
+
+```
+
+
 
 ---
 
