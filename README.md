@@ -115,7 +115,7 @@ NSRDB 사이트의 특징 중 하나는 자신의 원하는 지역의 데이터�
 
 # III. Data Preprocessing
 
- ## 1. 발전량 데이터 (PV.Generation)
+ ## 1. 발전량 데이터 (PV.Generation) 전처리
 
  ### 1-1. 파일 병합시키기
 
@@ -197,7 +197,7 @@ print(f"리샘플링 완료: {len(df_30min):,}행 (30분 단위)")
 
 ```
 
- ## 2. 기상 상황 데이터 (Weather_Data)
+ ## 2. 기상 상황 데이터 (Weather_Data) 전처리
 
   ### 2-1. 전처리②
 
@@ -245,6 +245,29 @@ print(f"시간 컬럼 생성 완료: {df['timestamp'].iloc[0]}")
 # 기존 시간 컬럼 제거
 df = df.drop(columns=['Year', 'Month', 'Day', 'Hour', 'Minute'])
 print("기존 시간 컬럼 제거 완료")
+
+```
+
+ ## 3. 두 데이터셋 합치기
+
+ 여기서는 **NIST 발전량 데이터셋**과 **NSRDB 기상 상황 데이터**를 timestamp 컬럼 기준으로 합쳤습니다.
+
+ 이때 발전량 데이터는 결측치 제거를 할 때 1행이 사라져서 기상 상황 데이터보다 1행이 더 적은 상태였습니다. 하지만 둘을 합칠 때 Inner Join 형식으로 해서 문제가 생기지는 않았습니다.
+
+  (Inner Join 형식을 사용하면 두 데이터셋에 모두 존재하는 timestamp만 합칠 수 있다. 따라서 문제가 안생김)
+
+ [preprocessing 3.py](./preprocessing/preprocessing_3.py)
+
+ ```python
+
+"""코드 일부분"""
+
+# ============================================================
+# Step 3: timestamp 기준으로 합치기
+# ============================================================
+print("\nStep 3: 데이터 합치는 중...")
+df = pd.merge(power, weather, on='timestamp', how='inner')
+print(f"합치기 완료: {len(df):,}행")
 
 ```
 
