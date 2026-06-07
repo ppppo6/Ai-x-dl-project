@@ -511,6 +511,10 @@ train_loader  = DataLoader(train_dataset, batch_size=64, shuffle=False)
 
 ```
 
+`TensorDataset`은 X_train과 Y_train을 하나의 쌍으로 묶어줍니다. 또한 `DataLoader`는 묶인 데이터를 64개씩 나눠서 모델에 전달해주는 역할을 합니다.
+
+또한 저희가 다루는 데이터는 시계열 데이터여서 순서를 섞으면 안됩니다. 따라서 `shuffle=False`로 했습니다.
+
 
 
 
