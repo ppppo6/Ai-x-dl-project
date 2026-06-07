@@ -705,6 +705,7 @@ for epoch in range(EPOCHS):
 50번 반복하면서 모델을 학습시키는 과정입니다.
 
 `model.train()
+
 epoch_loss = 0`
 
 ---
