@@ -412,6 +412,8 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ### 1-2. RNN 모델 코딩
 
+[RNN.py](./RNN.py)
+
 #### STEP 0. 필요한 패키지
 
 ```python
@@ -918,6 +920,8 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 ### 2-2. LSTM 모델 코딩
 
+[LSTM.py](./LSTM.py)
+
 **LSTM 모델을 코딩하는 과정은 RNN 이랑 거의 모든게 동일합니다. rnn/RNN 만 lstm/LSTM으로 바꿔주면 바로 LSTM 모델을 만들 수 있습니다. <br> 따라서 자세한 설명은 RNN 코딩 파트에서 해놨으니 어느 부분을 바꾸는지만 적어놓겠습니다.**
 
 ```python
@@ -959,6 +963,8 @@ out, _ = self.lstm(x)
 @@작성 필요
 
 ### 3-2. Transformer 모델 코딩
+
+[Transformer.py](./Transformer.py)
 
 Transformer도 RNN, LSTM이랑 굉장히 유사한 구조로 코딩을 할 수 있습니다. 하지만 변경을 해야하는 부분이 몇 가지 있습니다. 왜냐하면 기존의 RNN, LSTM은 데이터를 순서대로 하나씩 읽지만, Transformer는 시퀀스 데이터 전체를 한번에 본다는 특징(Self-Attention)을 지닙니다. 이러한 이유 때문에 몇 가지 변경점들이 생깁니다.
 
