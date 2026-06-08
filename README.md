@@ -1013,8 +1013,6 @@ Transformer도 RNN, LSTM이랑 굉장히 유사한 구조로 코딩을 할 수 �
 | LSTM | 2.8457 | 6.2106 | 0.6747 | 약 35분 |
 | Transformer | 2.8728 | 6.3749 | 0.6572 | 약 75분 |
 
---- 
-
 RNN의 EPOCH별(10, 20, 30, 40, 50) Train Loss / Test Loss
 
 | EPOCH | Train Loss | Test Loss |
@@ -1045,10 +1043,15 @@ Transformer의 EPOCH별(10, 20, 30, 40, 50) Train Loss / Test Loss
 | 40/50 | 0.008512 | 0.010270 |
 | 50/50 | 0.008029 | 0.010479 |
 
+---
 
 예측했던 모델 성능 : Transformer > LSTM > RNN
 
 결과를 토대로 한 모델 성능 : LSTM > Transformer = RNN
+
+---
+
+## 결과 해석 및 분석
 
  @@작성 필요
 
