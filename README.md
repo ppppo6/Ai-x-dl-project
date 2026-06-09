@@ -988,7 +988,10 @@ out, _ = self.lstm(x)
 
 ### 3-1. Transformer 모델 설명
 
-@@작성 필요 (이 모델이 어떻게 굴러가는지 간단하게)
+Transformer는 RNN과 LSTM에 비해 비교적 최근에 나온 시퀀스 모델입니다..
+
+
+본 프로젝트에서는 태양광 발전량 예측을 위해 Transformer를 RNN & LSTM과의 비교 모델로 사용하였습니다.
 
 ### 3-2. Transformer 모델 코딩
 
