@@ -912,7 +912,7 @@ x축을 EPOCH로 설정하고 y축을 loss(기준: 평균 제곱 오차)로 설�
 
 ## 2. LSTM 모델 구축
 
-### 2-1. LSTM 모델 설명
+### 2-1. LSTM 모델 간단한 설명
 
 @@작성 필요 (이 모델이 어떻게 굴러가는지 간단하게)
 
@@ -1093,18 +1093,19 @@ NSRDB 사이트 (기상 상황 데이터) - https://nsrdb.nlr.gov/data-viewer
 --
 
 RNN 모델 설명 출처 :
-https://en.wikipedia.org/wiki/Recurrent_neural_network
+https://aws.amazon.com/ko/what-is/recurrent-neural-network/
 
 https://terms.naver.com/entry.naver?docId=3686121&cid=42346&categoryId=42346
 
 LSTM 모델 설명 출처 :
-https://en.wikipedia.org/wiki/Long_short-term_memory
-
 https://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 Transformer 모델 설명 출처 :
-https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)
+https://terms.naver.com/entry.naver?docId=6653697&cid=69974&categoryId=69974
 
+https://nlpinkorean.github.io/illustrated-transformer/ (https://jalammar.github.io/illustrated-transformer/의 한국어 번역본)
+
+강의교안 (ai-module-07-1-beyond)
 
 ---
 
@@ -1126,4 +1127,4 @@ https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)
 
 시간의 순서(시퀀스)를 완전히 배제하고, 특정 시점의 기상 상황 변수 6개만 딱 주어졌을 때 그 순간의 발전량을 바로 예측하는 모델(ex. MLP 등등..)로 테스트를 해봤으면 어땠을까? 라는 생각이 들기도 했습니다. 만약 이 프로젝트의 내용을 확장할 기회가 생긴다면 시퀀스 모델이 아닌 다른 모델들로도 테스트를 해보고 싶습니다.
 
-마지막으로 
+---
