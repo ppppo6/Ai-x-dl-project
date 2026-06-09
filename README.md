@@ -398,7 +398,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 마지막으로 시작하기 전에 PyTorch에 대해서 간단하게 알아보겠습니다.
 
-@@작성 필요 (간단한 설명 -> 딥러닝 모델을 쉽게 만들고 학습시킬 수 있게 해줌)
+PyTorch는 Python 기반의 오픈소스 딥러닝 프레임워크입니다. 동적 계산 그래프(Dynamic Computation Graph)를 지원하여 모델 구현과 디버깅이 용이하며, GPU를 활용한 고속 학습이 가능합니다. 본 프로젝트에서는 RNN, LSTM, Transformer 모델을 구현하고 학습시키기 위해 PyTorch를 사용하였습니다.
 
 ---
 
@@ -406,7 +406,7 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ### 1-1. RNN 모델 설명
 
-@@작성 필요 (이 모델이 어떻게 굴러가는지 간단하게)
+RNN(Recurrent Neural Network)은 순서가 있는 데이터를 처리하기 위한 순환 신경망 모델입니다. 이전 시점의 정보를 현재 계산에 활용할 수 있어 시계열 데이터 분석에 적합합니다. 하지만 시퀀스 길이가 길어질수록 초기 정보가 점차 사라지는 기울기 소실(Vanishing Gradient) 문제가 발생할 수 있습니다. 본 프로젝트에서는 태양광 발전량 예측을 위한 기본 비교 모델로 RNN을 사용하였습니다.
 
 ### 1-2. RNN 모델 코딩
 
@@ -1092,16 +1092,14 @@ NSRDB 사이트 (기상 상황 데이터) - https://nsrdb.nlr.gov/data-viewer
 
 --
 
-RNN 모델 설명 : @@작성 필요 (출처)
+RNN 모델 설명 출처 :
+https://en.wikipedia.org/wiki/Recurrent_neural_network
 
+LSTM 모델 설명 출처 :
+https://en.wikipedia.org/wiki/Long_short-term_memory
 
-
-LSTM 모델 설명 : @@작성 필요 (출처)
-
-
-
-Transformer 모델 설명 : @@작성 필요 (출처)
-
+Transformer 모델 설명 출처 :
+https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)
 
 
 ---
