@@ -1166,3 +1166,8 @@ https://nlpinkorean.github.io/illustrated-transformer/ (https://jalammar.github.
 시간의 순서(시퀀스)를 완전히 배제하고, 특정 시점의 기상 상황 변수 6개만 딱 주어졌을 때 그 순간의 발전량을 바로 예측하는 모델(ex. MLP 등등..)로 테스트를 해봤으면 어땠을까? 라는 생각이 들기도 했습니다. 만약 이 프로젝트의 내용을 확장할 기회가 생긴다면 시퀀스 모델이 아닌 다른 모델들로도 테스트를 해보고 싶습니다.
 
 ---
+
+영상 링크 : [G28 영상](https://youtu.be/Yo_vK9HiKco?si=LB2-zpeTXvqvhYTJ)
+
+---
+
