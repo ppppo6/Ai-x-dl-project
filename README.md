@@ -1167,7 +1167,7 @@ https://nlpinkorean.github.io/illustrated-transformer/ (https://jalammar.github.
 
 ---
 
-영상 링크 : [G28 영상](https://youtu.be/Yo_vK9HiKco?si=LB2-zpeTXvqvhYTJ)
+영상 링크 : [G28 영상](https://youtu.be/Yo_vK9HiKco?si=LB2-zpeTXvqvhYTJ) / 마지막 수정 : 2026/06/09/ 23:40
 
 ---
 
