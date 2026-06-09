@@ -27,7 +27,7 @@ Members:
 
 - 데이터셋 확정 및 전처리 과정 수행
 
-- 모델(RNN, LSTM, Transformer) 구축 (코당)
+- 모델(RNN, LSTM, Transformer) 구축 (코딩)
 
 ---
 
@@ -1017,7 +1017,7 @@ Transformer도 RNN, LSTM이랑 굉장히 유사한 구조로 코딩을 할 수 �
 
 `self.transformer = nn.TransformerEncoder(...)` : LSTM 코딩 파트에서 했던거와 유사하게 nn.RNN 이나 nn.LSTM 을 nn.TransformerEncoder 로 변경해주는 과정입니다.
 
-중요한 변경점들은 이정도 될 거 같습니다.
+중요한 변경점들은 이 정도 될 거 같습니다.
 
 ---
 
