@@ -416,9 +416,11 @@ print(f"Y shape: {Y_seq.shape}  → (샘플수, 1)")
 
 ---
 
-마지막으로 시작하기 전에 PyTorch에 대해서 간단하게 알아보겠습니다.
+본 프로젝트에서는 RNN, LSTM, Transformer 모델을 구현하고 학습시키기 위해 PyTorch를 사용하였습니다.
 
-PyTorch는 Python 기반의 오픈소스 딥러닝 프레임워크입니다. 동적 계산 그래프(Dynamic Computation Graph)를 지원하여 모델 구현과 디버깅이 용이하며, GPU를 활용한 고속 학습이 가능합니다. 본 프로젝트에서는 RNN, LSTM, Transformer 모델을 구현하고 학습시키기 위해 PyTorch를 사용하였습니다.
+마지막으로 시작하기 전에 저희가 사용한 DL 라이브러리 (PyTorch)의 역할에 대해서 간단하게 알아보겠습니다.
+
+PyTorch는 Meta의 AI 연구소 FAIR이 만든 Python 기반의 오픈소스 딥러닝 프레임워크입니다. PyTorch의 특징으로는 모델 구현과 디버깅이 용이하며, GPU를 활용한 고속 학습이 가능하다는 점이 있습니다. 또한 PyTorch는 RNN, LSTM, Transformer같은 복잡한 모델들을 직접 수학적으로 구현하지 않아도 빠르게 구축하도록 도울 수 있습니다.
 
 ---
 
